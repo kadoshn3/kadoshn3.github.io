@@ -20,9 +20,9 @@
     <div class="w3-right w3-hide-small">
       <a href="#about" class="w3-bar-item w3-button">MISSION</a>
       <a href="#team" class="w3-bar-item w3-button"><i class="fa fa-user"></i> TEAM</a>
-      <a href="#work" class="w3-bar-item w3-button"><i class="fa fa-th"></i> WORK</a>
-      <a href="#pricing" class="w3-bar-item w3-button"><i class="fa fa-usd"></i> PRICING</a>
-      <a href="#contact" class="w3-bar-item w3-button"><i class="fa fa-envelope"></i> CONTACT</a>
+      <a href="#work" class="w3-bar-item w3-button"><i class="fa fa-th"></i> LIVE VIDEO</a>
+      <!--<a href="#pricing" class="w3-bar-item w3-button"><i class="fa fa-usd"></i> PRICING</a>
+      <a href="#contact" class="w3-bar-item w3-button"><i class="fa fa-envelope"></i> CONTACT</a>-->
     </div>
     <!-- Hide right-floated links on small screens and replace them with a menu icon -->
 
@@ -37,9 +37,9 @@
   <a href="javascript:void(0)" onclick="w3_close()" class="w3-bar-item w3-button w3-large w3-padding-16">Close &times;</a>
   <a href="#about" onclick="w3_close()" class="w3-bar-item w3-button">MISSION</a>
   <a href="#team" onclick="w3_close()" class="w3-bar-item w3-button">TEAM</a>
-  <a href="#work" onclick="w3_close()" class="w3-bar-item w3-button">WORK</a>
-  <a href="#pricing" onclick="w3_close()" class="w3-bar-item w3-button">PRICING</a>
-  <a href="#contact" onclick="w3_close()" class="w3-bar-item w3-button">CONTACT</a>
+  <a href="#work" onclick="w3_close()" class="w3-bar-item w3-button">LIVE VIDEO</a>
+  <!--<a href="#pricing" onclick="w3_close()" class="w3-bar-item w3-button">PRICING</a>
+  <a href="#contact" onclick="w3_close()" class="w3-bar-item w3-button">CONTACT</a>-->
 </nav>
 
 <!-- Header with full-height image -->
@@ -89,95 +89,15 @@
 </div>
 
 <!-- Promo Section - "We know design" -->
-<div class="w3-container w3-light-grey" style="padding:128px 16px">
+<div class="w3-container w3-light-grey" style="padding:128px 16px" id="work">
   <div class="w3-row-padding">
     <div class="w3-col m6">
-      <h3>Live Video Recognition.</h3>
-      
-      
-      
-          <!--<iframe src="https://player.twitch.tv/?channel=toan21" frameborder="0" allowfullscreen="true" scrolling="no" height="378" width="620">
-      </iframe>
-    <a href="https://www.twitch.tv/toan21?tt_content=text_link&tt_medium=live_embed" style="padding:2px 0px 4px; display:block; width:345px; font-weight:normal; font-size:10px; text-decoration:underline;">
-    Watch live video from Toan21 on www.twitch.tv</a>-->
-      
-      
-      
-      
-      <p>Through open cv, pyhon, flask, and mysql, his live video uses facial recognition to track the number of people in a room. </p>
+      <h3>We know design.</h3>
+      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod<br>tempor incididunt ut labore et dolore.</p>
       <p><a href="#work" class="w3-button w3-black"><i class="fa fa-th">&nbsp;</i> View Our Works</a></p>
     </div>
     <div class="w3-col m6">
-      
-      
-      
-     <!-- <iframe src="https://player.twitch.tv/?channel=toan21" frameborder="0" allowfullscreen="true" scrolling="no" height="378" width="620">
-      </iframe>
-    <a href="https://www.twitch.tv/toan21?tt_content=text_link&tt_medium=live_embed" style="padding:2px 0px 4px; display:block; width:345px; font-weight:normal; font-size:10px; text-decoration:underline;">
-    Watch live video from Toan21 on www.twitch.tv</a>-->
-      
-      
-      
-        <meta charset="utf-8">
-
-  <script src="../build/tracking-min.js"></script>
-  <script src="../build/data/face-min.js"></script>
-   <script src="../node_modules/dat.gui/build/dat.gui.min.js"></script>
-  <script src="assets/stats.min.js"></script>
-<style>
-  video, canvas {
-    margin-left: 230px;
-    margin-top: 120px;
-    position: absolute;
-  }
-  </style>
-</head>
-<body>
-
-  <div class="demo-frame">
-    <div class="demo-container">
-	  <video id="video" width="600" height="450" preload autoplay loop muted></video>
-	  <canvas id="canvas" width="600" height="450"></canvas>
-    </div>
-  </div>
-
-  <script>
-    window.onload = function() {
-      var video = document.getElementById('video');
-      var canvas = document.getElementById('canvas');
-      var context = canvas.getContext('2d');
-
-      var tracker = new tracking.ObjectTracker('face');
-      tracker.setInitialScale(4);
-      tracker.setStepSize(2);
-      tracker.setEdgesDensity(0.1);
-
-      tracking.track('#video', tracker, { camera: true });
-
-      tracker.on('track', function(event) {
-        context.clearRect(0, 0, canvas.width, canvas.height);
-
-        event.data.forEach(function(rect) {
-          context.strokeStyle = '#a64ceb';
-          context.strokeRect(rect.x, rect.y, rect.width, rect.height);
-          context.font = '11px Helvetica';
-          context.fillStyle = "#fff";
-          context.fillText('x: ' + rect.x + 'px', rect.x + rect.width + 5, rect.y + 11);
-          context.fillText('y: ' + rect.y + 'px', rect.x + rect.width + 5, rect.y + 22);
-        });
-      });
-
-      var gui = new dat.GUI();
-      gui.add(tracker, 'edgesDensity', 0.1, 0.5).step(0.01);
-      gui.add(tracker, 'initialScale', 1.0, 10.0).step(0.1);
-      gui.add(tracker, 'stepSize', 1, 5).step(0.1);
-    };
-  </script>
-
-      
-      
-      
-    <!--  <img class="w3-image w3-round-large" src="img/phone_buildings.jpg" alt="Buildings" width="700" height="394">-->
+      <img class="w3-image w3-round-large" src="img/phone_buildings.jpg" alt="Buildings" width="700" height="394">
     </div>
   </div>
 </div>
@@ -255,14 +175,14 @@
 </div>
 
 <!-- Work Section -->
-<div class="w3-container" style="padding:128px 16px" id="work">
+<div class="w3-container" style="padding:128px 16px">
   <h3 class="w3-center">OUR WORK</h3>
   <p class="w3-center w3-large">What we've done for people</p>
 
   <div class="w3-row-padding" style="margin-top:64px">
     <div class="w3-col l3 m6">
       <img src="img/tech_mic.jpg" style="width:100%" onclick="onClick(this)" class="w3-hover-opacity" alt="A microphone">
-    </div>  
+    </div>
     <div class="w3-col l3 m6">
       <img src="img/tech_phone.jpg" style="width:100%" onclick="onClick(this)" class="w3-hover-opacity" alt="A phone">
     </div>
@@ -278,9 +198,16 @@
     <div class="w3-col l3 m6">
       <img src="img/tech_tablet.jpg" style="width:100%" onclick="onClick(this)" class="w3-hover-opacity" alt="A tablet">
     </div>
+    
+    
+    
+    <iframe src="https://player.twitch.tv/?channel=toan21" frameborder="0" allowfullscreen="true" scrolling="no" height="378" width="620"></iframe><a href="https://www.twitch.tv/toan21?tt_content=text_link&tt_medium=live_embed" style="padding:2px 0px 4px; display:block; width:345px; font-weight:normal; font-size:10px; text-decoration:underline;">Watch live video from Toan21 on www.twitch.tv</a>
+    
+    
+    
     <div class="w3-col l3 m6">
       <img src="img/tech_camera.jpg" style="width:100%" onclick="onClick(this)" class="w3-hover-opacity" alt="A camera">
-    </div>
+    </div>    
     <div class="w3-col l3 m6">
       <img src="img/tech_typewriter.jpg" style="width:100%" onclick="onClick(this)" class="w3-hover-opacity" alt="A typewriter">
     </div>
