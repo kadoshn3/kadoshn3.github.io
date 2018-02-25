@@ -1,5 +1,34 @@
  <!DOCTYPE html>
 <html>
+ <head>
+
+  <meta charset="utf-8">
+
+
+
+  <script src="../build/tracking-min.js"></script>
+
+  <script src="../build/data/face-min.js"></script>
+
+   <script src="../node_modules/dat.gui/build/dat.gui.min.js"></script>
+
+  <script src="assets/stats.min.js"></script>
+
+<style>
+
+  video, canvas {
+
+    margin-left: 230px;
+
+    margin-top: 120px;
+
+    position: absolute;
+
+  }
+
+  </style>
+
+</head>
 <title>Security Tracker</title>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -93,13 +122,97 @@
   <div class="w3-row-padding">
     <div class="w3-col m6">
       <h3>LIVE VIDEO.</h3>
-      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod<br>tempor incididunt ut labore et dolore.</p>
-      <p><a href="#work" class="w3-button w3-black"><i class="fa fa-th">&nbsp;</i> View Our Works</a></p>
+     <!-- <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod<br>tempor incididunt ut labore et dolore.</p>
+      <p><a href="#work" class="w3-button w3-black"><i class="fa fa-th">&nbsp;</i> View Our Works</a></p>-->
     </div>
     <div class="w3-col m6">
       
      
      
+
+
+
+  <div class="demo-frame">
+
+    <div class="demo-container">
+
+	  <video id="video" width="600" height="450" preload autoplay loop muted></video>
+
+	  <canvas id="canvas" width="600" height="450"></canvas>
+
+    </div>
+
+  </div>
+
+
+
+  <script>
+
+    window.onload = function() {
+
+      var video = document.getElementById('video');
+
+      var canvas = document.getElementById('canvas');
+
+      var context = canvas.getContext('2d');
+
+
+
+      var tracker = new tracking.ObjectTracker('face');
+
+      tracker.setInitialScale(4);
+
+      tracker.setStepSize(2);
+
+      tracker.setEdgesDensity(0.1);
+
+
+
+      tracking.track('#video', tracker, { camera: true });
+
+
+
+      tracker.on('track', function(event) {
+
+        context.clearRect(0, 0, canvas.width, canvas.height);
+
+
+
+        event.data.forEach(function(rect) {
+
+          context.strokeStyle = '#a64ceb';
+
+          context.strokeRect(rect.x, rect.y, rect.width, rect.height);
+
+          context.font = '11px Helvetica';
+
+          context.fillStyle = "#fff";
+
+          context.fillText('x: ' + rect.x + 'px', rect.x + rect.width + 5, rect.y + 11);
+
+          context.fillText('y: ' + rect.y + 'px', rect.x + rect.width + 5, rect.y + 22);
+
+        });
+
+      });
+
+
+
+      var gui = new dat.GUI();
+
+      gui.add(tracker, 'edgesDensity', 0.1, 0.5).step(0.01);
+
+      gui.add(tracker, 'initialScale', 1.0, 10.0).step(0.1);
+
+      gui.add(tracker, 'stepSize', 1, 5).step(0.1);
+
+    };
+
+  </script>
+
+
+
+
      
      
           
